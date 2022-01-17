@@ -52,6 +52,8 @@ public class MemberService {
 
         // 중복된 이름 회원 가입 x
         // 위의 내용 method화
+
+        /* 측정 시간 */
         validateDuplicateMember(member);
 
         memberRepository.save(member);
