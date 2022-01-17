@@ -20,7 +20,14 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	/* html 파일 변경한 후 재시작 없이 적용 */
 	implementation 'org.springframework.boot:spring-boot-devtools'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	/* db 접속시 필요 */
+	/*implementation 'org.springframework.boot:spring-boot-starter-jdbc'*/
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'com.h2database:h2'
+	/* db 접속시 필요 */
+	testImplementation('org.springframework.boot:spring-boot-starter-test'){
+		exclude group: 'org.junit.vintage', module: 'junit-vintate-engine'
+	}
 }
 
 test {
